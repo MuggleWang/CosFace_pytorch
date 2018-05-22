@@ -45,7 +45,7 @@ class MarginCosineProduct(nn.Module):
         cosine = F.linear(F.normalize(input), F.normalize(self.weight))
         phi = cosine - self.m
         # --------------------------- convert label to one-hot ---------------------------
-        one_hot = Variable(torch.zeros(cosine.size()))
+        one_hot = Variable(torch.zeros(cosine.size())).cuda()
         one_hot.scatter_(1, label.view(-1, 1), 1)
         # -------------torch.where(out_i = {x_i if condition_i else y_i) -------------
         output = (one_hot * phi) + ((1 - one_hot) * cosine) # you can use torch.where if your torch.__version__ is 0.4
