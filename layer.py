@@ -16,7 +16,7 @@ class MarginCosineProduct(nn.Module):
         m: margin
     """
 
-    def __init__(self, in_features, out_features, s=30.0, m=0.35):
+    def __init__(self, in_features, out_features, s=30.0, m=0.40):
         super(MarginCosineProduct, self).__init__()
         self.in_features = in_features
         self.out_features = out_features
@@ -26,32 +26,16 @@ class MarginCosineProduct(nn.Module):
         nn.init.xavier_uniform(self.weight)
 
     def forward(self, input, label):
-        # one-hot index way
-        '''
-
-        cosine = F.linear(F.normalize(input), F.normalize(self.weight))
-        phi = cosine - self.m
-        # --------------------------- convert label to one-hot ---------------------------
-        index = torch.zeros_like(cosine.data)
-        index.scatter_(1, label.data.view(-1, 1), 1)
-        index = index.byte()
-        index = Variable(index)
-
-        output = 1.0 * cosine
-        output[index] = phi[index]
-        output *= self.s
-        '''
         # --------------------------- cos(theta) & phi(theta) ---------------------------
         cosine = F.linear(F.normalize(input), F.normalize(self.weight))
         phi = cosine - self.m
         # --------------------------- convert label to one-hot ---------------------------
-        one_hot = Variable(torch.zeros(cosine.size())).cuda()
+        one_hot = Variable(torch.zeros(cosine.size()))
+        one_hot = one_hot.cuda() if cosine.is_cuda else one_hot
         one_hot.scatter_(1, label.view(-1, 1), 1)
         # -------------torch.where(out_i = {x_i if condition_i else y_i) -------------
-        output = (one_hot * phi) + ((1 - one_hot) * cosine) # you can use torch.where if your torch.__version__ is 0.4
-        # output[[range(output.size(0))], label] -= self.m
+        output = (one_hot * phi) + ((1.0 - one_hot) * cosine)  # you can use torch.where if your torch.__version__ is 0.4
         output *= self.s
-
 
         return output
 
@@ -88,6 +72,10 @@ class AngleLinear(nn.Module):
         ]
 
     def forward(self, input, label):
+        # lambda = max(lambda_min,base*(1+gamma*iteration)^(-power))
+        self.iter += 1
+        self.lamb = max(self.LambdaMin, self.base * (1 + self.gamma * self.iter) ** (-1 * self.power))
+
         # --------------------------- cos(theta) & phi(theta) ---------------------------
         cos_theta = F.linear(F.normalize(input), F.normalize(self.weight))
         cos_theta = cos_theta.clamp(-1, 1)
@@ -95,23 +83,15 @@ class AngleLinear(nn.Module):
         theta = Variable(cos_theta.data.acos())
         k = (self.m * theta / 3.14159265).floor()
         phi_theta = ((-1.0) ** k) * cos_m_theta - 2 * k
-        NormOfFeature = input.pow(2).sum(1).pow(0.5)  # size=Batch
+        NormOfFeature = torch.norm(input, 2, 1)
 
         # --------------------------- convert label to one-hot ---------------------------
-        index = cos_theta.data * 0.0
-        index.scatter_(1, label.data.view(-1, 1), 1)
-        index = index.byte()
-        index = Variable(index)
+        one_hot = Variable(torch.zeros(cos_theta.size()))
+        one_hot = one_hot.cuda() if cos_theta.is_cuda else one_hot
+        one_hot.scatter_(1, label.view(-1, 1), 1)
 
         # --------------------------- Calculate output ---------------------------
-        # f = (lamb*cos + phi)/(1+lamb)
-        # lambda = max(lambda_min,base*(1+gamma*iteration)^(-power))
-        self.iter += 1
-        self.lamb = max(self.LambdaMin, self.base * (1 + self.gamma * self.iter) ** (-1 * self.power))
-        output = 1.0 * cos_theta  # size=(mini-batch size,Class number)
-        output[index] -= cos_theta[index] / (1 + self.lamb)
-        output[index] += phi_theta[index] / (1 + self.lamb)
-        # choose multiply norm of feature or not(recommend not)
+        output = (one_hot * (phi_theta - cos_theta) / (1 + self.lamb)) + cos_theta
         output *= NormOfFeature.view(-1, 1)
 
         return output
