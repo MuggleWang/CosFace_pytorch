@@ -1,0 +1,383 @@
+Best Acc: 99.08%
+s = 30
+m = 0.35
+DataParallel(
+  (module): sphere20(
+    (conv1_1): Conv2d(3, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (relu1_1): PReLU(num_parameters=64)
+    (conv1_2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu1_2): PReLU(num_parameters=64)
+    (conv1_3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu1_3): PReLU(num_parameters=64)
+    (conv2_1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (relu2_1): PReLU(num_parameters=128)
+    (conv2_2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu2_2): PReLU(num_parameters=128)
+    (conv2_3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu2_3): PReLU(num_parameters=128)
+    (conv2_4): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu2_4): PReLU(num_parameters=128)
+    (conv2_5): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu2_5): PReLU(num_parameters=128)
+    (conv3_1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (relu3_1): PReLU(num_parameters=256)
+    (conv3_2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu3_2): PReLU(num_parameters=256)
+    (conv3_3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu3_3): PReLU(num_parameters=256)
+    (conv3_4): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu3_4): PReLU(num_parameters=256)
+    (conv3_5): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu3_5): PReLU(num_parameters=256)
+    (conv3_6): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu3_6): PReLU(num_parameters=256)
+    (conv3_7): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu3_7): PReLU(num_parameters=256)
+    (conv3_8): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu3_8): PReLU(num_parameters=256)
+    (conv3_9): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu3_9): PReLU(num_parameters=256)
+    (conv4_1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (relu4_1): PReLU(num_parameters=512)
+    (conv4_2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu4_2): PReLU(num_parameters=512)
+    (conv4_3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+    (relu4_3): PReLU(num_parameters=512)
+    (fc5): Linear(in_features=21504, out_features=512, bias=True)
+  )
+)
+length of train Dataset: 490606
+Number of Classses: 10572
+2018-05-22 21:45:22 Epoch 1 start training
+2018-05-22 21:46:07 Train Epoch: 1 [51200/490606 (10%)]100, Loss: 22.600954, Elapsed time: 45.0899s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:46:40 Train Epoch: 1 [102400/490606 (21%)]200, Loss: 21.635449, Elapsed time: 33.0874s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:47:14 Train Epoch: 1 [153600/490606 (31%)]300, Loss: 21.067246, Elapsed time: 33.7100s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:47:48 Train Epoch: 1 [204800/490606 (42%)]400, Loss: 20.728319, Elapsed time: 34.4642s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:48:23 Train Epoch: 1 [256000/490606 (52%)]500, Loss: 20.514118, Elapsed time: 34.5442s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:48:57 Train Epoch: 1 [307200/490606 (63%)]600, Loss: 20.296195, Elapsed time: 34.7273s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:49:32 Train Epoch: 1 [358400/490606 (73%)]700, Loss: 19.980296, Elapsed time: 34.9502s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:50:07 Train Epoch: 1 [409600/490606 (84%)]800, Loss: 19.786006, Elapsed time: 34.9108s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:50:42 Train Epoch: 1 [460800/490606 (94%)]900, Loss: 19.543513, Elapsed time: 35.0684s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.7613 std=0.0166 thd=0.6495
+2018-05-22 21:53:01 Epoch 2 start training
+2018-05-22 21:53:35 Train Epoch: 2 [51200/490606 (10%)]1058, Loss: 18.982758, Elapsed time: 34.3254s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:54:10 Train Epoch: 2 [102400/490606 (21%)]1158, Loss: 18.653946, Elapsed time: 35.0302s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:54:45 Train Epoch: 2 [153600/490606 (31%)]1258, Loss: 18.255760, Elapsed time: 35.4200s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:55:21 Train Epoch: 2 [204800/490606 (42%)]1358, Loss: 17.850857, Elapsed time: 35.5379s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:55:56 Train Epoch: 2 [256000/490606 (52%)]1458, Loss: 17.440493, Elapsed time: 35.4471s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:56:32 Train Epoch: 2 [307200/490606 (63%)]1558, Loss: 17.037631, Elapsed time: 35.3990s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:57:07 Train Epoch: 2 [358400/490606 (73%)]1658, Loss: 16.577483, Elapsed time: 35.2975s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:57:42 Train Epoch: 2 [409600/490606 (84%)]1758, Loss: 16.167652, Elapsed time: 35.3091s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 21:58:18 Train Epoch: 2 [460800/490606 (94%)]1858, Loss: 15.735231, Elapsed time: 35.4039s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.8923 std=0.0127 thd=0.3850
+2018-05-22 22:00:34 Epoch 3 start training
+2018-05-22 22:01:08 Train Epoch: 3 [51200/490606 (10%)]2016, Loss: 14.670126, Elapsed time: 34.3753s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:01:43 Train Epoch: 3 [102400/490606 (21%)]2116, Loss: 14.273571, Elapsed time: 35.0561s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:02:19 Train Epoch: 3 [153600/490606 (31%)]2216, Loss: 13.689304, Elapsed time: 35.4784s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:02:54 Train Epoch: 3 [204800/490606 (42%)]2316, Loss: 13.096583, Elapsed time: 35.3116s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:03:29 Train Epoch: 3 [256000/490606 (52%)]2416, Loss: 12.476149, Elapsed time: 35.4366s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:04:05 Train Epoch: 3 [307200/490606 (63%)]2516, Loss: 11.934728, Elapsed time: 35.3232s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:04:40 Train Epoch: 3 [358400/490606 (73%)]2616, Loss: 11.412854, Elapsed time: 35.4174s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:05:15 Train Epoch: 3 [409600/490606 (84%)]2716, Loss: 10.971903, Elapsed time: 35.3072s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:05:51 Train Epoch: 3 [460800/490606 (94%)]2816, Loss: 10.577932, Elapsed time: 35.3240s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9553 std=0.0103 thd=0.2995
+2018-05-22 22:08:04 Epoch 4 start training
+2018-05-22 22:08:39 Train Epoch: 4 [51200/490606 (10%)]2974, Loss: 9.375189, Elapsed time: 34.3327s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:09:14 Train Epoch: 4 [102400/490606 (21%)]3074, Loss: 9.274599, Elapsed time: 34.8808s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:09:49 Train Epoch: 4 [153600/490606 (31%)]3174, Loss: 9.088168, Elapsed time: 35.3627s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:10:24 Train Epoch: 4 [204800/490606 (42%)]3274, Loss: 9.011744, Elapsed time: 35.2787s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:11:00 Train Epoch: 4 [256000/490606 (52%)]3374, Loss: 8.822991, Elapsed time: 35.2338s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:11:35 Train Epoch: 4 [307200/490606 (63%)]3474, Loss: 8.670180, Elapsed time: 35.1527s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:12:10 Train Epoch: 4 [358400/490606 (73%)]3574, Loss: 8.482811, Elapsed time: 35.0152s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:12:45 Train Epoch: 4 [409600/490606 (84%)]3674, Loss: 8.339943, Elapsed time: 35.1037s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:13:20 Train Epoch: 4 [460800/490606 (94%)]3774, Loss: 8.169740, Elapsed time: 34.9259s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9740 std=0.0067 thd=0.3040
+2018-05-22 22:15:35 Epoch 5 start training
+2018-05-22 22:16:09 Train Epoch: 5 [51200/490606 (10%)]3932, Loss: 7.288937, Elapsed time: 34.1931s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:16:44 Train Epoch: 5 [102400/490606 (21%)]4032, Loss: 7.379745, Elapsed time: 35.2267s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:17:20 Train Epoch: 5 [153600/490606 (31%)]4132, Loss: 7.449170, Elapsed time: 35.6028s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:17:55 Train Epoch: 5 [204800/490606 (42%)]4232, Loss: 7.447756, Elapsed time: 35.3010s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:18:30 Train Epoch: 5 [256000/490606 (52%)]4332, Loss: 7.408133, Elapsed time: 35.0234s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:19:05 Train Epoch: 5 [307200/490606 (63%)]4432, Loss: 7.355981, Elapsed time: 34.8612s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:19:40 Train Epoch: 5 [358400/490606 (73%)]4532, Loss: 7.270527, Elapsed time: 34.8908s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:20:15 Train Epoch: 5 [409600/490606 (84%)]4632, Loss: 7.239150, Elapsed time: 34.7472s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:20:50 Train Epoch: 5 [460800/490606 (94%)]4732, Loss: 7.233232, Elapsed time: 34.9264s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9775 std=0.0076 thd=0.2775
+2018-05-22 22:23:05 Epoch 6 start training
+2018-05-22 22:23:40 Train Epoch: 6 [51200/490606 (10%)]4890, Loss: 6.359903, Elapsed time: 34.4088s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:24:15 Train Epoch: 6 [102400/490606 (21%)]4990, Loss: 6.555435, Elapsed time: 34.7548s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:24:50 Train Epoch: 6 [153600/490606 (31%)]5090, Loss: 6.672913, Elapsed time: 35.1948s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:25:25 Train Epoch: 6 [204800/490606 (42%)]5190, Loss: 6.736073, Elapsed time: 35.1223s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:26:00 Train Epoch: 6 [256000/490606 (52%)]5290, Loss: 6.746384, Elapsed time: 35.1058s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:26:35 Train Epoch: 6 [307200/490606 (63%)]5390, Loss: 6.757408, Elapsed time: 35.0717s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:27:10 Train Epoch: 6 [358400/490606 (73%)]5490, Loss: 6.674938, Elapsed time: 35.0432s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:27:45 Train Epoch: 6 [409600/490606 (84%)]5590, Loss: 6.701476, Elapsed time: 35.0503s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:28:20 Train Epoch: 6 [460800/490606 (94%)]5690, Loss: 6.726889, Elapsed time: 34.9406s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9828 std=0.0058 thd=0.2715
+2018-05-22 22:30:39 Epoch 7 start training
+2018-05-22 22:31:13 Train Epoch: 7 [51200/490606 (10%)]5848, Loss: 5.889477, Elapsed time: 34.3826s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:31:48 Train Epoch: 7 [102400/490606 (21%)]5948, Loss: 6.168547, Elapsed time: 34.7548s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:32:23 Train Epoch: 7 [153600/490606 (31%)]6048, Loss: 6.198733, Elapsed time: 35.1798s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:32:59 Train Epoch: 7 [204800/490606 (42%)]6148, Loss: 6.335482, Elapsed time: 35.1067s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:33:34 Train Epoch: 7 [256000/490606 (52%)]6248, Loss: 6.339082, Elapsed time: 35.1257s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:34:09 Train Epoch: 7 [307200/490606 (63%)]6348, Loss: 6.341745, Elapsed time: 35.0927s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:34:44 Train Epoch: 7 [358400/490606 (73%)]6448, Loss: 6.348263, Elapsed time: 35.0882s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:35:19 Train Epoch: 7 [409600/490606 (84%)]6548, Loss: 6.336185, Elapsed time: 34.9500s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:35:54 Train Epoch: 7 [460800/490606 (94%)]6648, Loss: 6.331119, Elapsed time: 35.0763s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9850 std=0.0058 thd=0.2620
+2018-05-22 22:38:12 Epoch 8 start training
+2018-05-22 22:38:46 Train Epoch: 8 [51200/490606 (10%)]6806, Loss: 5.530350, Elapsed time: 34.2303s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:39:21 Train Epoch: 8 [102400/490606 (21%)]6906, Loss: 5.815683, Elapsed time: 34.7794s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:39:56 Train Epoch: 8 [153600/490606 (31%)]7006, Loss: 5.971776, Elapsed time: 35.2423s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:40:32 Train Epoch: 8 [204800/490606 (42%)]7106, Loss: 5.997392, Elapsed time: 35.2328s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:41:07 Train Epoch: 8 [256000/490606 (52%)]7206, Loss: 6.054575, Elapsed time: 35.1988s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:41:42 Train Epoch: 8 [307200/490606 (63%)]7306, Loss: 6.068667, Elapsed time: 35.2065s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:42:17 Train Epoch: 8 [358400/490606 (73%)]7406, Loss: 6.058443, Elapsed time: 35.0308s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:42:52 Train Epoch: 8 [409600/490606 (84%)]7506, Loss: 6.108605, Elapsed time: 35.0202s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:43:27 Train Epoch: 8 [460800/490606 (94%)]7606, Loss: 6.110675, Elapsed time: 34.9316s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9868 std=0.0050 thd=0.2595
+2018-05-22 22:45:41 Epoch 9 start training
+2018-05-22 22:46:15 Train Epoch: 9 [51200/490606 (10%)]7764, Loss: 5.321429, Elapsed time: 34.3351s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:46:50 Train Epoch: 9 [102400/490606 (21%)]7864, Loss: 5.573366, Elapsed time: 34.8284s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:47:25 Train Epoch: 9 [153600/490606 (31%)]7964, Loss: 5.738787, Elapsed time: 35.2380s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:48:00 Train Epoch: 9 [204800/490606 (42%)]8064, Loss: 5.782237, Elapsed time: 35.2815s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:48:36 Train Epoch: 9 [256000/490606 (52%)]8164, Loss: 5.830540, Elapsed time: 35.3485s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:49:11 Train Epoch: 9 [307200/490606 (63%)]8264, Loss: 5.865085, Elapsed time: 35.2456s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:49:46 Train Epoch: 9 [358400/490606 (73%)]8364, Loss: 5.907460, Elapsed time: 35.1378s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:50:21 Train Epoch: 9 [409600/490606 (84%)]8464, Loss: 5.886113, Elapsed time: 35.0700s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:50:56 Train Epoch: 9 [460800/490606 (94%)]8564, Loss: 5.946792, Elapsed time: 35.0518s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9858 std=0.0057 thd=0.2550
+2018-05-22 22:53:10 Epoch 10 start training
+2018-05-22 22:53:44 Train Epoch: 10 [51200/490606 (10%)]8722, Loss: 5.142571, Elapsed time: 34.3763s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:54:19 Train Epoch: 10 [102400/490606 (21%)]8822, Loss: 5.366993, Elapsed time: 35.1353s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:54:55 Train Epoch: 10 [153600/490606 (31%)]8922, Loss: 5.550301, Elapsed time: 35.4777s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:55:30 Train Epoch: 10 [204800/490606 (42%)]9022, Loss: 5.680198, Elapsed time: 35.3487s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:56:06 Train Epoch: 10 [256000/490606 (52%)]9122, Loss: 5.656593, Elapsed time: 35.3255s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:56:41 Train Epoch: 10 [307200/490606 (63%)]9222, Loss: 5.695698, Elapsed time: 35.3045s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:57:16 Train Epoch: 10 [358400/490606 (73%)]9322, Loss: 5.766745, Elapsed time: 35.3371s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:57:52 Train Epoch: 10 [409600/490606 (84%)]9422, Loss: 5.768542, Elapsed time: 35.3369s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 22:58:27 Train Epoch: 10 [460800/490606 (94%)]9522, Loss: 5.763000, Elapsed time: 35.2162s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9855 std=0.0064 thd=0.2805
+2018-05-22 23:00:42 Epoch 11 start training
+2018-05-22 23:01:17 Train Epoch: 11 [51200/490606 (10%)]9680, Loss: 5.067659, Elapsed time: 34.5888s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:01:52 Train Epoch: 11 [102400/490606 (21%)]9780, Loss: 5.214870, Elapsed time: 35.1515s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:02:27 Train Epoch: 11 [153600/490606 (31%)]9880, Loss: 5.334287, Elapsed time: 35.5170s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:03:03 Train Epoch: 11 [204800/490606 (42%)]9980, Loss: 5.477006, Elapsed time: 35.2556s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:03:38 Train Epoch: 11 [256000/490606 (52%)]10080, Loss: 5.493786, Elapsed time: 35.1654s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:04:13 Train Epoch: 11 [307200/490606 (63%)]10180, Loss: 5.639891, Elapsed time: 35.0905s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:04:48 Train Epoch: 11 [358400/490606 (73%)]10280, Loss: 5.634824, Elapsed time: 35.1074s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:05:23 Train Epoch: 11 [409600/490606 (84%)]10380, Loss: 5.585205, Elapsed time: 35.1950s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:05:58 Train Epoch: 11 [460800/490606 (94%)]10480, Loss: 5.687141, Elapsed time: 35.0830s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9862 std=0.0051 thd=0.2645
+2018-05-22 23:08:16 Epoch 12 start training
+2018-05-22 23:08:51 Train Epoch: 12 [51200/490606 (10%)]10638, Loss: 4.917343, Elapsed time: 34.3082s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:09:26 Train Epoch: 12 [102400/490606 (21%)]10738, Loss: 5.148166, Elapsed time: 35.1818s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:10:01 Train Epoch: 12 [153600/490606 (31%)]10838, Loss: 5.270394, Elapsed time: 35.5913s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:10:37 Train Epoch: 12 [204800/490606 (42%)]10938, Loss: 5.381381, Elapsed time: 35.4713s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:11:12 Train Epoch: 12 [256000/490606 (52%)]11038, Loss: 5.455194, Elapsed time: 35.4538s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:11:48 Train Epoch: 12 [307200/490606 (63%)]11138, Loss: 5.521281, Elapsed time: 35.4404s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:12:23 Train Epoch: 12 [358400/490606 (73%)]11238, Loss: 5.463669, Elapsed time: 35.2922s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:12:58 Train Epoch: 12 [409600/490606 (84%)]11338, Loss: 5.489256, Elapsed time: 35.2772s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:13:34 Train Epoch: 12 [460800/490606 (94%)]11438, Loss: 5.572077, Elapsed time: 35.2020s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9870 std=0.0051 thd=0.2550
+2018-05-22 23:15:47 Epoch 13 start training
+2018-05-22 23:16:21 Train Epoch: 13 [51200/490606 (10%)]11596, Loss: 4.789563, Elapsed time: 34.1861s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:16:56 Train Epoch: 13 [102400/490606 (21%)]11696, Loss: 5.035744, Elapsed time: 35.1321s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:17:32 Train Epoch: 13 [153600/490606 (31%)]11796, Loss: 5.169541, Elapsed time: 35.5848s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:18:07 Train Epoch: 13 [204800/490606 (42%)]11896, Loss: 5.290563, Elapsed time: 35.5094s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:18:43 Train Epoch: 13 [256000/490606 (52%)]11996, Loss: 5.377353, Elapsed time: 35.4856s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:19:18 Train Epoch: 13 [307200/490606 (63%)]12096, Loss: 5.406241, Elapsed time: 35.2799s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:19:53 Train Epoch: 13 [358400/490606 (73%)]12196, Loss: 5.407582, Elapsed time: 35.3432s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:20:29 Train Epoch: 13 [409600/490606 (84%)]12296, Loss: 5.430258, Elapsed time: 35.1904s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:21:04 Train Epoch: 13 [460800/490606 (94%)]12396, Loss: 5.482270, Elapsed time: 35.0904s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9873 std=0.0064 thd=0.2605
+2018-05-22 23:23:18 Epoch 14 start training
+2018-05-22 23:23:52 Train Epoch: 14 [51200/490606 (10%)]12554, Loss: 4.700509, Elapsed time: 34.3754s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:24:27 Train Epoch: 14 [102400/490606 (21%)]12654, Loss: 4.907626, Elapsed time: 35.0799s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:25:03 Train Epoch: 14 [153600/490606 (31%)]12754, Loss: 5.103592, Elapsed time: 35.6084s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:25:39 Train Epoch: 14 [204800/490606 (42%)]12854, Loss: 5.215897, Elapsed time: 35.4522s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:26:14 Train Epoch: 14 [256000/490606 (52%)]12954, Loss: 5.232947, Elapsed time: 35.4237s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:26:49 Train Epoch: 14 [307200/490606 (63%)]13054, Loss: 5.311103, Elapsed time: 35.4532s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:27:25 Train Epoch: 14 [358400/490606 (73%)]13154, Loss: 5.336309, Elapsed time: 35.3234s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:28:00 Train Epoch: 14 [409600/490606 (84%)]13254, Loss: 5.437646, Elapsed time: 35.2710s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:28:35 Train Epoch: 14 [460800/490606 (94%)]13354, Loss: 5.393375, Elapsed time: 35.2365s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9877 std=0.0042 thd=0.2475
+2018-05-22 23:30:49 Epoch 15 start training
+2018-05-22 23:31:23 Train Epoch: 15 [51200/490606 (10%)]13512, Loss: 4.655903, Elapsed time: 34.2714s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:31:58 Train Epoch: 15 [102400/490606 (21%)]13612, Loss: 4.849881, Elapsed time: 35.3053s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:32:34 Train Epoch: 15 [153600/490606 (31%)]13712, Loss: 4.989246, Elapsed time: 35.6771s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:33:09 Train Epoch: 15 [204800/490606 (42%)]13812, Loss: 5.143055, Elapsed time: 35.5542s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:33:45 Train Epoch: 15 [256000/490606 (52%)]13912, Loss: 5.169729, Elapsed time: 35.5004s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:34:20 Train Epoch: 15 [307200/490606 (63%)]14012, Loss: 5.214453, Elapsed time: 35.4116s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:34:56 Train Epoch: 15 [358400/490606 (73%)]14112, Loss: 5.240951, Elapsed time: 35.3782s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:35:31 Train Epoch: 15 [409600/490606 (84%)]14212, Loss: 5.270314, Elapsed time: 35.4207s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:36:06 Train Epoch: 15 [460800/490606 (94%)]14312, Loss: 5.345285, Elapsed time: 35.2293s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9870 std=0.0059 thd=0.2405
+2018-05-22 23:38:21 Epoch 16 start training
+2018-05-22 23:38:55 Train Epoch: 16 [51200/490606 (10%)]14470, Loss: 4.567621, Elapsed time: 34.2929s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:39:30 Train Epoch: 16 [102400/490606 (21%)]14570, Loss: 4.797665, Elapsed time: 35.2119s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:40:06 Train Epoch: 16 [153600/490606 (31%)]14670, Loss: 4.945240, Elapsed time: 35.6355s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:40:42 Train Epoch: 16 [204800/490606 (42%)]14770, Loss: 5.050015, Elapsed time: 35.6600s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:41:17 Train Epoch: 16 [256000/490606 (52%)]14870, Loss: 5.128154, Elapsed time: 35.4247s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:41:53 Train Epoch: 16 [307200/490606 (63%)]14970, Loss: 5.157999, Elapsed time: 35.3828s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:42:28 Train Epoch: 16 [358400/490606 (73%)]15070, Loss: 5.167270, Elapsed time: 35.1905s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:43:03 Train Epoch: 16 [409600/490606 (84%)]15170, Loss: 5.229934, Elapsed time: 35.3342s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:43:38 Train Epoch: 16 [460800/490606 (94%)]15270, Loss: 5.259656, Elapsed time: 35.2687s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9882 std=0.0047 thd=0.2240
+2018-05-22 23:45:58 Epoch 17 start training
+2018-05-22 23:46:32 Train Epoch: 17 [51200/490606 (10%)]15428, Loss: 4.512006, Elapsed time: 34.1700s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:47:07 Train Epoch: 17 [102400/490606 (21%)]15528, Loss: 4.710182, Elapsed time: 34.8363s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:47:42 Train Epoch: 17 [153600/490606 (31%)]15628, Loss: 4.887441, Elapsed time: 35.3376s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:48:17 Train Epoch: 17 [204800/490606 (42%)]15728, Loss: 4.957819, Elapsed time: 35.2749s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:48:52 Train Epoch: 17 [256000/490606 (52%)]15828, Loss: 5.078830, Elapsed time: 35.2719s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:49:28 Train Epoch: 17 [307200/490606 (63%)]15928, Loss: 5.158377, Elapsed time: 35.2370s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:49:53 Adjust learning rate to 0.01
+2018-05-22 23:50:03 Train Epoch: 17 [358400/490606 (73%)]16028, Loss: 5.070725, Elapsed time: 35.1548s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:50:38 Train Epoch: 17 [409600/490606 (84%)]16128, Loss: 4.411720, Elapsed time: 35.2391s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:51:13 Train Epoch: 17 [460800/490606 (94%)]16228, Loss: 4.249382, Elapsed time: 35.1592s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9903 std=0.0050 thd=0.2370
+2018-05-22 23:53:32 Epoch 18 start training
+2018-05-22 23:54:06 Train Epoch: 18 [51200/490606 (10%)]16386, Loss: 3.292109, Elapsed time: 34.2940s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:54:41 Train Epoch: 18 [102400/490606 (21%)]16486, Loss: 3.274331, Elapsed time: 34.6985s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:55:16 Train Epoch: 18 [153600/490606 (31%)]16586, Loss: 3.231943, Elapsed time: 35.2813s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:55:51 Train Epoch: 18 [204800/490606 (42%)]16686, Loss: 3.223001, Elapsed time: 35.0915s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:56:26 Train Epoch: 18 [256000/490606 (52%)]16786, Loss: 3.202021, Elapsed time: 35.1575s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:57:01 Train Epoch: 18 [307200/490606 (63%)]16886, Loss: 3.183747, Elapsed time: 35.0470s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:57:36 Train Epoch: 18 [358400/490606 (73%)]16986, Loss: 3.155177, Elapsed time: 34.9893s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:58:11 Train Epoch: 18 [409600/490606 (84%)]17086, Loss: 3.132971, Elapsed time: 34.9572s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-22 23:58:46 Train Epoch: 18 [460800/490606 (94%)]17186, Loss: 3.140817, Elapsed time: 34.9012s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9903 std=0.0049 thd=0.2235
+2018-05-23 00:01:06 Epoch 19 start training
+2018-05-23 00:01:40 Train Epoch: 19 [51200/490606 (10%)]17344, Loss: 2.854041, Elapsed time: 34.2458s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:02:15 Train Epoch: 19 [102400/490606 (21%)]17444, Loss: 2.783621, Elapsed time: 35.0830s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:02:50 Train Epoch: 19 [153600/490606 (31%)]17544, Loss: 2.843280, Elapsed time: 35.5041s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:03:26 Train Epoch: 19 [204800/490606 (42%)]17644, Loss: 2.860288, Elapsed time: 35.5899s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:04:01 Train Epoch: 19 [256000/490606 (52%)]17744, Loss: 2.839766, Elapsed time: 35.4159s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:04:37 Train Epoch: 19 [307200/490606 (63%)]17844, Loss: 2.880108, Elapsed time: 35.3900s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:05:12 Train Epoch: 19 [358400/490606 (73%)]17944, Loss: 2.900396, Elapsed time: 35.2266s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:05:47 Train Epoch: 19 [409600/490606 (84%)]18044, Loss: 2.867618, Elapsed time: 35.3016s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:06:23 Train Epoch: 19 [460800/490606 (94%)]18144, Loss: 2.875468, Elapsed time: 35.1908s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9903 std=0.0050 thd=0.2125
+2018-05-23 00:08:36 Epoch 20 start training
+2018-05-23 00:09:10 Train Epoch: 20 [51200/490606 (10%)]18302, Loss: 2.554133, Elapsed time: 34.3287s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:09:45 Train Epoch: 20 [102400/490606 (21%)]18402, Loss: 2.607153, Elapsed time: 35.3701s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:10:21 Train Epoch: 20 [153600/490606 (31%)]18502, Loss: 2.612296, Elapsed time: 35.6037s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:10:57 Train Epoch: 20 [204800/490606 (42%)]18602, Loss: 2.642180, Elapsed time: 35.5793s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:11:32 Train Epoch: 20 [256000/490606 (52%)]18702, Loss: 2.685085, Elapsed time: 35.5143s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:12:07 Train Epoch: 20 [307200/490606 (63%)]18802, Loss: 2.684187, Elapsed time: 35.2929s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:12:42 Train Epoch: 20 [358400/490606 (73%)]18902, Loss: 2.683294, Elapsed time: 35.0651s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:13:18 Train Epoch: 20 [409600/490606 (84%)]19002, Loss: 2.721427, Elapsed time: 35.2448s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:13:53 Train Epoch: 20 [460800/490606 (94%)]19102, Loss: 2.778452, Elapsed time: 34.9152s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9908 std=0.0052 thd=0.2365
+2018-05-23 00:16:06 Epoch 21 start training
+2018-05-23 00:16:41 Train Epoch: 21 [51200/490606 (10%)]19260, Loss: 2.414846, Elapsed time: 34.1809s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:17:16 Train Epoch: 21 [102400/490606 (21%)]19360, Loss: 2.458174, Elapsed time: 34.9075s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:17:51 Train Epoch: 21 [153600/490606 (31%)]19460, Loss: 2.482589, Elapsed time: 35.4105s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:18:26 Train Epoch: 21 [204800/490606 (42%)]19560, Loss: 2.530692, Elapsed time: 35.2552s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:19:02 Train Epoch: 21 [256000/490606 (52%)]19660, Loss: 2.546041, Elapsed time: 35.3687s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:19:37 Train Epoch: 21 [307200/490606 (63%)]19760, Loss: 2.540463, Elapsed time: 35.3726s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:20:12 Train Epoch: 21 [358400/490606 (73%)]19860, Loss: 2.604936, Elapsed time: 35.2030s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:20:47 Train Epoch: 21 [409600/490606 (84%)]19960, Loss: 2.611385, Elapsed time: 35.2878s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:21:23 Train Epoch: 21 [460800/490606 (94%)]20060, Loss: 2.583186, Elapsed time: 35.1266s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9900 std=0.0044 thd=0.2235
+2018-05-23 00:23:38 Epoch 22 start training
+2018-05-23 00:24:12 Train Epoch: 22 [51200/490606 (10%)]20218, Loss: 2.312288, Elapsed time: 34.3688s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:24:47 Train Epoch: 22 [102400/490606 (21%)]20318, Loss: 2.322858, Elapsed time: 35.1162s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:25:23 Train Epoch: 22 [153600/490606 (31%)]20418, Loss: 2.376300, Elapsed time: 35.5070s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:25:58 Train Epoch: 22 [204800/490606 (42%)]20518, Loss: 2.400634, Elapsed time: 35.3175s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:26:33 Train Epoch: 22 [256000/490606 (52%)]20618, Loss: 2.447151, Elapsed time: 35.4576s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:27:09 Train Epoch: 22 [307200/490606 (63%)]20718, Loss: 2.463280, Elapsed time: 35.3186s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:27:44 Train Epoch: 22 [358400/490606 (73%)]20818, Loss: 2.495648, Elapsed time: 35.2715s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:28:19 Train Epoch: 22 [409600/490606 (84%)]20918, Loss: 2.510246, Elapsed time: 35.2716s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:28:54 Train Epoch: 22 [460800/490606 (94%)]21018, Loss: 2.538454, Elapsed time: 35.2471s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9900 std=0.0051 thd=0.2140
+2018-05-23 00:31:09 Epoch 23 start training
+2018-05-23 00:31:43 Train Epoch: 23 [51200/490606 (10%)]21176, Loss: 2.197756, Elapsed time: 34.3331s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:32:18 Train Epoch: 23 [102400/490606 (21%)]21276, Loss: 2.232229, Elapsed time: 34.9979s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:32:53 Train Epoch: 23 [153600/490606 (31%)]21376, Loss: 2.257729, Elapsed time: 35.4569s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:33:29 Train Epoch: 23 [204800/490606 (42%)]21476, Loss: 2.333342, Elapsed time: 35.1632s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:34:04 Train Epoch: 23 [256000/490606 (52%)]21576, Loss: 2.363562, Elapsed time: 35.2012s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:34:39 Train Epoch: 23 [307200/490606 (63%)]21676, Loss: 2.413824, Elapsed time: 35.1760s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:35:14 Train Epoch: 23 [358400/490606 (73%)]21776, Loss: 2.418349, Elapsed time: 34.8895s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:35:49 Train Epoch: 23 [409600/490606 (84%)]21876, Loss: 2.444954, Elapsed time: 34.8233s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:36:23 Train Epoch: 23 [460800/490606 (94%)]21976, Loss: 2.462782, Elapsed time: 34.7011s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9892 std=0.0047 thd=0.2380
+2018-05-23 00:38:36 Epoch 24 start training
+2018-05-23 00:39:10 Train Epoch: 24 [51200/490606 (10%)]22134, Loss: 2.120939, Elapsed time: 34.1980s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:39:46 Train Epoch: 24 [102400/490606 (21%)]22234, Loss: 2.181790, Elapsed time: 35.0652s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:40:21 Train Epoch: 24 [153600/490606 (31%)]22334, Loss: 2.196826, Elapsed time: 35.3712s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:40:56 Train Epoch: 24 [204800/490606 (42%)]22434, Loss: 2.279552, Elapsed time: 35.1335s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:41:31 Train Epoch: 24 [256000/490606 (52%)]22534, Loss: 2.260789, Elapsed time: 35.1803s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:42:06 Train Epoch: 24 [307200/490606 (63%)]22634, Loss: 2.321239, Elapsed time: 35.1143s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:42:41 Train Epoch: 24 [358400/490606 (73%)]22734, Loss: 2.340150, Elapsed time: 35.0766s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:43:17 Train Epoch: 24 [409600/490606 (84%)]22834, Loss: 2.402619, Elapsed time: 35.1346s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:43:52 Train Epoch: 24 [460800/490606 (94%)]22934, Loss: 2.407765, Elapsed time: 35.0243s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9898 std=0.0042 thd=0.2300
+2018-05-23 00:46:08 Epoch 25 start training
+2018-05-23 00:46:42 Train Epoch: 25 [51200/490606 (10%)]23092, Loss: 2.066123, Elapsed time: 34.2343s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:47:17 Train Epoch: 25 [102400/490606 (21%)]23192, Loss: 2.068774, Elapsed time: 34.8117s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:47:52 Train Epoch: 25 [153600/490606 (31%)]23292, Loss: 2.130189, Elapsed time: 35.2171s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:48:27 Train Epoch: 25 [204800/490606 (42%)]23392, Loss: 2.184955, Elapsed time: 35.0019s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:49:02 Train Epoch: 25 [256000/490606 (52%)]23492, Loss: 2.249126, Elapsed time: 35.0431s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:49:37 Train Epoch: 25 [307200/490606 (63%)]23592, Loss: 2.283695, Elapsed time: 34.9946s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:50:12 Train Epoch: 25 [358400/490606 (73%)]23692, Loss: 2.311159, Elapsed time: 34.9964s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:50:47 Train Epoch: 25 [409600/490606 (84%)]23792, Loss: 2.312220, Elapsed time: 35.0199s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:51:22 Train Epoch: 25 [460800/490606 (94%)]23892, Loss: 2.394800, Elapsed time: 35.0061s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9887 std=0.0045 thd=0.2190
+2018-05-23 00:53:37 Epoch 26 start training
+2018-05-23 00:53:54 Adjust learning rate to 0.001
+2018-05-23 00:54:11 Train Epoch: 26 [51200/490606 (10%)]24050, Loss: 1.950384, Elapsed time: 34.1717s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:54:46 Train Epoch: 26 [102400/490606 (21%)]24150, Loss: 1.888394, Elapsed time: 34.9734s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:55:21 Train Epoch: 26 [153600/490606 (31%)]24250, Loss: 1.875045, Elapsed time: 35.4192s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:55:57 Train Epoch: 26 [204800/490606 (42%)]24350, Loss: 1.864290, Elapsed time: 35.2158s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:56:32 Train Epoch: 26 [256000/490606 (52%)]24450, Loss: 1.888378, Elapsed time: 35.2611s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:57:07 Train Epoch: 26 [307200/490606 (63%)]24550, Loss: 1.873999, Elapsed time: 35.1157s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:57:42 Train Epoch: 26 [358400/490606 (73%)]24650, Loss: 1.878325, Elapsed time: 35.1907s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:58:17 Train Epoch: 26 [409600/490606 (84%)]24750, Loss: 1.856046, Elapsed time: 35.0270s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 00:58:52 Train Epoch: 26 [460800/490606 (94%)]24850, Loss: 1.856536, Elapsed time: 34.9795s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9903 std=0.0052 thd=0.2305
+2018-05-23 01:01:07 Epoch 27 start training
+2018-05-23 01:01:41 Train Epoch: 27 [51200/490606 (10%)]25008, Loss: 1.738820, Elapsed time: 34.2393s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:02:16 Train Epoch: 27 [102400/490606 (21%)]25108, Loss: 1.790705, Elapsed time: 35.0232s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:02:51 Train Epoch: 27 [153600/490606 (31%)]25208, Loss: 1.802848, Elapsed time: 35.2499s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:03:27 Train Epoch: 27 [204800/490606 (42%)]25308, Loss: 1.773464, Elapsed time: 35.2591s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:04:02 Train Epoch: 27 [256000/490606 (52%)]25408, Loss: 1.787410, Elapsed time: 35.2097s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:04:37 Train Epoch: 27 [307200/490606 (63%)]25508, Loss: 1.809478, Elapsed time: 34.8425s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:05:12 Train Epoch: 27 [358400/490606 (73%)]25608, Loss: 1.822759, Elapsed time: 34.8035s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:05:46 Train Epoch: 27 [409600/490606 (84%)]25708, Loss: 1.804524, Elapsed time: 34.8979s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:06:21 Train Epoch: 27 [460800/490606 (94%)]25808, Loss: 1.825293, Elapsed time: 34.7194s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9905 std=0.0047 thd=0.2245
+2018-05-23 01:08:35 Epoch 28 start training
+2018-05-23 01:09:09 Train Epoch: 28 [51200/490606 (10%)]25966, Loss: 1.765702, Elapsed time: 34.1676s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:09:44 Train Epoch: 28 [102400/490606 (21%)]26066, Loss: 1.766602, Elapsed time: 35.0128s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:10:19 Train Epoch: 28 [153600/490606 (31%)]26166, Loss: 1.745782, Elapsed time: 35.3007s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:10:55 Train Epoch: 28 [204800/490606 (42%)]26266, Loss: 1.763547, Elapsed time: 35.0860s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:11:30 Train Epoch: 28 [256000/490606 (52%)]26366, Loss: 1.759258, Elapsed time: 35.0722s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:12:04 Train Epoch: 28 [307200/490606 (63%)]26466, Loss: 1.742912, Elapsed time: 34.8199s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:12:39 Train Epoch: 28 [358400/490606 (73%)]26566, Loss: 1.784234, Elapsed time: 34.8042s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:13:14 Train Epoch: 28 [409600/490606 (84%)]26666, Loss: 1.764379, Elapsed time: 34.7352s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:13:49 Train Epoch: 28 [460800/490606 (94%)]26766, Loss: 1.776731, Elapsed time: 34.7032s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9898 std=0.0051 thd=0.2220
+2018-05-23 01:16:03 Epoch 29 start training
+2018-05-23 01:16:37 Train Epoch: 29 [51200/490606 (10%)]26924, Loss: 1.726539, Elapsed time: 34.1740s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:17:12 Train Epoch: 29 [102400/490606 (21%)]27024, Loss: 1.734869, Elapsed time: 34.8935s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:17:47 Train Epoch: 29 [153600/490606 (31%)]27124, Loss: 1.743535, Elapsed time: 35.2736s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:18:22 Train Epoch: 29 [204800/490606 (42%)]27224, Loss: 1.719379, Elapsed time: 35.2191s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:18:58 Train Epoch: 29 [256000/490606 (52%)]27324, Loss: 1.712499, Elapsed time: 35.3052s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:19:33 Train Epoch: 29 [307200/490606 (63%)]27424, Loss: 1.747275, Elapsed time: 35.2560s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:20:08 Train Epoch: 29 [358400/490606 (73%)]27524, Loss: 1.763670, Elapsed time: 35.2012s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:20:43 Train Epoch: 29 [409600/490606 (84%)]27624, Loss: 1.763478, Elapsed time: 35.1901s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:21:18 Train Epoch: 29 [460800/490606 (94%)]27724, Loss: 1.750996, Elapsed time: 35.0691s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9888 std=0.0057 thd=0.2240
+2018-05-23 01:23:33 Epoch 30 start training
+2018-05-23 01:24:07 Train Epoch: 30 [51200/490606 (10%)]27882, Loss: 1.693540, Elapsed time: 34.2031s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:24:43 Train Epoch: 30 [102400/490606 (21%)]27982, Loss: 1.718465, Elapsed time: 35.1225s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:25:18 Train Epoch: 30 [153600/490606 (31%)]28082, Loss: 1.708006, Elapsed time: 35.4531s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:25:53 Train Epoch: 30 [204800/490606 (42%)]28182, Loss: 1.715883, Elapsed time: 35.4763s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:26:29 Train Epoch: 30 [256000/490606 (52%)]28282, Loss: 1.726821, Elapsed time: 35.4548s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:27:04 Train Epoch: 30 [307200/490606 (63%)]28382, Loss: 1.739319, Elapsed time: 35.2314s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:27:39 Train Epoch: 30 [358400/490606 (73%)]28482, Loss: 1.736377, Elapsed time: 35.2901s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:28:15 Train Epoch: 30 [409600/490606 (84%)]28582, Loss: 1.727251, Elapsed time: 35.2052s(100 iters) Margin: 0.3500, Scale: 30.00
+2018-05-23 01:28:50 Train Epoch: 30 [460800/490606 (94%)]28682, Loss: 1.746549, Elapsed time: 35.2006s(100 iters) Margin: 0.3500, Scale: 30.00
+LFWACC=0.9893 std=0.0047 thd=0.2235
+Finished Training
