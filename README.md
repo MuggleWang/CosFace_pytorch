@@ -3,6 +3,8 @@ Pytorch implementation of CosFace
 
 Train with WebFace.
 
-The accuracy is about 99.18%.
-
-Hyper-parameter: (s = 30, m = 0.35)
+Network  |  Hyper-parameter  |  Accuracy on LFW
+------------- | -------------  |  -------------
+Sphere20  | s=30, m=0.35  |  99.08%
+Sphere20  | s=30, m=0.40  |  99.23%
+LResnetE-IR(In ArcFace paper)  | s=30, m=0.40  |  99.45%
