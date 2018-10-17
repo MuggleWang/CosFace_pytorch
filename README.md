@@ -1,4 +1,5 @@
 # CosFace_pytorch
+UPDATE ONGOING...
 Pytorch implementation of CosFace
 
 Train with WebFace.
