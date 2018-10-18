@@ -9,7 +9,25 @@ import torch.backends.cudnn as cudnn
 
 cudnn.benchmark = True
 
-from net import sphere20
+import net
+
+
+def extractDeepFeature(img, model, is_gray):
+    if is_gray:
+        transform = transforms.Compose([
+            transforms.Grayscale(),
+            transforms.ToTensor(),  # range [0, 255] -> [0.0,1.0]
+            transforms.Normalize(mean=(0.5,), std=(0.5,))  # range [0.0, 1.0] -> [-1.0,1.0]
+        ])
+    else:
+        transform = transforms.Compose([
+            transforms.ToTensor(),  # range [0, 255] -> [0.0,1.0]
+            transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))  # range [0.0, 1.0] -> [-1.0,1.0]
+        ])
+    img, img_ = transform(img), transform(F.hflip(img))
+    img, img_ = img.unsqueeze(0).to('cuda'), img_.unsqueeze(0).to('cuda')
+    ft = torch.cat((model(img), model(img_)), 1)[0].to('cpu')
+    return ft
 
 
 def KFold(n=6000, n_folds=10):
@@ -45,42 +63,36 @@ def find_best_threshold(thresholds, predicts):
     return best_threshold
 
 
-def eval(model_path=None):
+def eval(model, model_path=None, is_gray=False):
     predicts = []
-    model = sphere20().cuda()
     model.load_state_dict(torch.load(model_path))
     model.eval()
-    root = '~/dataset/lfw/lfw-112X96/'
-    with open('~/Project/sphereface/test/data/pairs.txt') as f:
+    root = '/home/wangyf/dataset/lfw/lfw-112X96/'
+    with open('/home/wangyf/Project/sphereface/test/data/pairs.txt') as f:
         pairs_lines = f.readlines()[1:]
-    transform = transforms.Compose([
-        transforms.ToTensor(),  # range [0, 255] -> [0.0,1.0]
-        transforms.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))  # range [0.0, 1.0] -> [-1.0,1.0]
-    ])
-    for i in range(6000):
-        p = pairs_lines[i].replace('\n', '').split('\t')
 
-        if 3 == len(p):
-            sameflag = 1
-            name1 = p[0] + '/' + p[0] + '_' + '{:04}.jpg'.format(int(p[1]))
-            name2 = p[0] + '/' + p[0] + '_' + '{:04}.jpg'.format(int(p[2]))
-        if 4 == len(p):
-            sameflag = 0
-            name1 = p[0] + '/' + p[0] + '_' + '{:04}.jpg'.format(int(p[1]))
-            name2 = p[2] + '/' + p[2] + '_' + '{:04}.jpg'.format(int(p[3]))
+    with torch.no_grad():
+        for i in range(6000):
+            p = pairs_lines[i].replace('\n', '').split('\t')
 
-        img1 = Image.open(root + name1).convert('RGB')
-        img2 = Image.open(root + name2).convert('RGB')
-        img1, img1_, img2, img2_ = transform(img1), transform(F.hflip(img1)), transform(img2), transform(F.hflip(img2))
-        img1, img1_ = Variable(img1.unsqueeze(0).cuda(), volatile=True), Variable(img1_.unsqueeze(0).cuda(),
-                                                                                  volatile=True)
-        img2, img2_ = Variable(img2.unsqueeze(0).cuda(), volatile=True), Variable(img2_.unsqueeze(0).cuda(),
-                                                                                  volatile=True)
-        f1 = torch.cat((model(img1), model(img1_)), 1).data.cpu()[0]
-        f2 = torch.cat((model(img2), model(img2_)), 1).data.cpu()[0]
+            if 3 == len(p):
+                sameflag = 1
+                name1 = p[0] + '/' + p[0] + '_' + '{:04}.jpg'.format(int(p[1]))
+                name2 = p[0] + '/' + p[0] + '_' + '{:04}.jpg'.format(int(p[2]))
+            elif 4 == len(p):
+                sameflag = 0
+                name1 = p[0] + '/' + p[0] + '_' + '{:04}.jpg'.format(int(p[1]))
+                name2 = p[2] + '/' + p[2] + '_' + '{:04}.jpg'.format(int(p[3]))
+            else:
+                raise ValueError("WRONG LINE IN 'pairs.txt! ")
 
-        cosdistance = f1.dot(f2) / (f1.norm() * f2.norm() + 1e-5)
-        predicts.append('{}\t{}\t{}\t{}\n'.format(name1, name2, cosdistance, sameflag))
+            img1 = Image.open(root + name1).convert('RGB')
+            img2 = Image.open(root + name2).convert('RGB')
+            f1 = extractDeepFeature(img1, model, is_gray)
+            f2 = extractDeepFeature(img2, model, is_gray)
+
+            distance = f1.dot(f2) / (f1.norm() * f2.norm() + 1e-5)
+            predicts.append('{}\t{}\t{}\t{}\n'.format(name1, name2, distance, sameflag))
 
     accuracy = []
     thd = []
@@ -97,12 +109,5 @@ def eval(model_path=None):
 
 
 if __name__ == '__main__':
-    '''
-    _, result = eval(model_path='checkpoint/SphereFace_24_checkpoint.pth')
+    _, result = eval(net.sphere().to('cuda'), model_path='checkpoint/CosFace_24_checkpoint.pth')
     np.savetxt("result.txt", result, '%s')
-    '''
-    eval(model_path='checkpoint/CosFace_30_checkpoint.pth')
-    '''
-    for epoch in range(1, 31):
-        eval('checkpoint/CosFace_' + str(epoch) + '_checkpoint.pth')
-    '''

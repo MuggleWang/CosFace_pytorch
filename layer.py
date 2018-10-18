@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import Parameter
-from torch.autograd import Variable
+import math
 
 
 class MarginCosineProduct(nn.Module):
@@ -22,20 +22,19 @@ class MarginCosineProduct(nn.Module):
         self.out_features = out_features
         self.s = s
         self.m = m
-        self.weight = Parameter(torch.FloatTensor(out_features, in_features))
-        nn.init.xavier_uniform(self.weight)
+        self.weight = Parameter(torch.Tensor(out_features, in_features))
+        nn.init.xavier_uniform_(self.weight)
+        #stdv = 1. / math.sqrt(self.weight.size(1))
+        #self.weight.data.uniform_(-stdv, stdv)
 
     def forward(self, input, label):
-        # --------------------------- cos(theta) & phi(theta) ---------------------------
         cosine = F.linear(F.normalize(input), F.normalize(self.weight))
-        phi = cosine - self.m
         # --------------------------- convert label to one-hot ---------------------------
-        one_hot = Variable(torch.zeros(cosine.size()))
-        one_hot = one_hot.cuda() if cosine.is_cuda else one_hot
-        one_hot.scatter_(1, label.view(-1, 1), 1)
+        # https://discuss.pytorch.org/t/convert-int-into-one-hot-format/507
+        one_hot = torch.zeros_like(cosine)
+        one_hot.scatter_(1, label.view(-1, 1), self.m)
         # -------------torch.where(out_i = {x_i if condition_i else y_i) -------------
-        output = (one_hot * phi) + ((1.0 - one_hot) * cosine)  # you can use torch.where if your torch.__version__ is 0.4
-        output *= self.s
+        output = self.s * (cosine - one_hot)
 
         return output
 
@@ -58,8 +57,8 @@ class AngleLinear(nn.Module):
         self.power = 1
         self.LambdaMin = 5.0
         self.iter = 0
-        self.weight = Parameter(torch.FloatTensor(out_features, in_features))
-        nn.init.xavier_uniform(self.weight)
+        self.weight = Parameter(torch.Tensor(out_features, in_features))
+        nn.init.xavier_uniform_(self.weight)
 
         # duplication formula
         self.mlambda = [
@@ -80,14 +79,13 @@ class AngleLinear(nn.Module):
         cos_theta = F.linear(F.normalize(input), F.normalize(self.weight))
         cos_theta = cos_theta.clamp(-1, 1)
         cos_m_theta = self.mlambda[self.m](cos_theta)
-        theta = Variable(cos_theta.data.acos())
+        theta = cos_theta.data.acos()
         k = (self.m * theta / 3.14159265).floor()
         phi_theta = ((-1.0) ** k) * cos_m_theta - 2 * k
         NormOfFeature = torch.norm(input, 2, 1)
 
         # --------------------------- convert label to one-hot ---------------------------
-        one_hot = Variable(torch.zeros(cos_theta.size()))
-        one_hot = one_hot.cuda() if cos_theta.is_cuda else one_hot
+        one_hot = torch.zeros_like(cos_theta)
         one_hot.scatter_(1, label.view(-1, 1), 1)
 
         # --------------------------- Calculate output ---------------------------

@@ -5,13 +5,14 @@ import os
 ImageFile.LOAD_TRUNCATED_IAMGES = True
 
 
+# https://github.com/pytorch/vision/issues/81
+
 def PIL_loader(path):
     try:
-        img = Image.open(path).convert('RGB')
+        with open(path, 'rb') as f:
+            return Image.open(f).convert('RGB')
     except IOError:
         print('Cannot load image ' + path)
-    else:
-        return img
 
 
 def default_reader(fileList):
@@ -24,14 +25,6 @@ def default_reader(fileList):
 
 
 class ImageList(data.Dataset):
-    '''
-     Args:
-        root (string): Root directory path.
-        fileList (string): Image list file path
-        transform (callable, optional): A function/transform that  takes in an PIL image
-            and returns a transformed version. E.g, ``transforms.RandomCrop``
-    '''
-
     def __init__(self, root, fileList, transform=None, list_reader=default_reader, loader=PIL_loader):
         self.root = root
         self.imgList = list_reader(fileList)

@@ -1,10 +1,30 @@
 # CosFace_pytorch
-UPDATE ONGOING...
-Pytorch implementation of CosFace
 
-Train with WebFace.
+***Pytorch implementation of CosFace***
 
-You should first complete the data preprocessing section by following these steps https://github.com/wy1iu/sphereface#part-1-preprocessing
+------------
+
+- Deep Learning Platform:  PyTorch 0.4.1
+- OS:  CentOS Linux release 7.5
+- Language:  Python 2.7
+- CUDA:  8.0
+
+------------
+
+-  Database:  `WebFace` or `VggFace2` (You should first complete the data preprocessing section by following these steps https://github.com/wy1iu/sphereface#part-1-preprocessing)
+- Network:  `sphere20`, `sphere64`, `LResnet50E-IR`(In ArcFace paper)
+
+------------
+
+### Result(new)
+
+Single model trained on CAISA-WebFace achieves **~99.2%** accuracy on LFW
+
+Note: Pytorch 0.4 seems to be very different from 0.3, which leads me to not fully reproduce the previous results. Currently still adjusting parameters....
+
+The initialization of the fully connected layer does not use Xavier but is more conducive to model convergence.
+
+### Result(old)
 
 Network  |  Hyper-parameter  |  Accuracy on LFW
 ------------- | -------------  |  -------------
