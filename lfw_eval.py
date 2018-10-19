@@ -86,8 +86,10 @@ def eval(model, model_path=None, is_gray=False):
             else:
                 raise ValueError("WRONG LINE IN 'pairs.txt! ")
 
-            img1 = Image.open(root + name1).convert('RGB')
-            img2 = Image.open(root + name2).convert('RGB')
+            with open(root + name1, 'rb') as f:
+                img1 =  Image.open(f).convert('RGB')
+            with open(root + name2, 'rb') as f:
+                img2 =  Image.open(f).convert('RGB')
             f1 = extractDeepFeature(img1, model, is_gray)
             f2 = extractDeepFeature(img2, model, is_gray)
 
