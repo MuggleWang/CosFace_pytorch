@@ -13,14 +13,7 @@ class Block(nn.Module):
         self.prelu2 = nn.PReLU(planes)
 
     def forward(self, x):
-        residual = x
-        out = self.conv1(x)
-        out = self.prelu1(out)
-        out = self.conv2(out)
-        out = self.prelu2(out)
-        out += residual
-
-        return out
+        return x + self.prelu2(self.conv2(self.prelu1(self.conv1(x))))
 
 
 class sphere(nn.Module):

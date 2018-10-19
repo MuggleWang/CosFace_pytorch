@@ -16,7 +16,7 @@ class MarginCosineProduct(nn.Module):
         m: margin
     """
 
-    def __init__(self, in_features, out_features, s=30.0, m=0.40):
+    def __init__(self, in_features, out_features, s=30.0, m=0.35):
         super(MarginCosineProduct, self).__init__()
         self.in_features = in_features
         self.out_features = out_features
@@ -32,9 +32,9 @@ class MarginCosineProduct(nn.Module):
         # --------------------------- convert label to one-hot ---------------------------
         # https://discuss.pytorch.org/t/convert-int-into-one-hot-format/507
         one_hot = torch.zeros_like(cosine)
-        one_hot.scatter_(1, label.view(-1, 1), self.m)
+        one_hot.scatter_(1, label.view(-1, 1), 1.0)
         # -------------torch.where(out_i = {x_i if condition_i else y_i) -------------
-        output = self.s * (cosine - one_hot)
+        output = self.s * (cosine - one_hot * self.m)
 
         return output
 
