@@ -18,7 +18,7 @@
 
 ### Result(new)
 
-Single model trained on CAISA-WebFace achieves **~99.2%** accuracy on LFW
+Single model trained on CAISA-WebFace achieves **~99.2%** accuracy on LFW (Link: https://pan.baidu.com/s/1uOBATynzBTzZwrIKC4kcAA Password: 69e6)
 
 Note: Pytorch 0.4 seems to be very different from 0.3, which leads me to not fully reproduce the previous results. Currently still adjusting parameters....
 
