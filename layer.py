@@ -6,6 +6,11 @@ import torch.nn.functional as F
 from torch.nn import Parameter
 import math
 
+def cosine_sim(x1, x2, dim=1, eps=1e-8):
+    ip = torch.mm(x1, x2.t())
+    w1 = torch.norm(x1, 2, dim)
+    w2 = torch.norm(x2, 2, dim)
+    return ip / torch.ger(w1,w2).clamp(min=eps)
 
 class MarginCosineProduct(nn.Module):
     r"""Implement of large margin cosine distance: :
@@ -16,7 +21,7 @@ class MarginCosineProduct(nn.Module):
         m: margin
     """
 
-    def __init__(self, in_features, out_features, s=30.0, m=0.35):
+    def __init__(self, in_features, out_features, s=30.0, m=0.40):
         super(MarginCosineProduct, self).__init__()
         self.in_features = in_features
         self.out_features = out_features
@@ -28,7 +33,8 @@ class MarginCosineProduct(nn.Module):
         #self.weight.data.uniform_(-stdv, stdv)
 
     def forward(self, input, label):
-        cosine = F.linear(F.normalize(input), F.normalize(self.weight))
+        cosine = cosine_sim(input, self.weight)
+        # cosine = F.linear(F.normalize(input), F.normalize(self.weight))
         # --------------------------- convert label to one-hot ---------------------------
         # https://discuss.pytorch.org/t/convert-int-into-one-hot-format/507
         one_hot = torch.zeros_like(cosine)
